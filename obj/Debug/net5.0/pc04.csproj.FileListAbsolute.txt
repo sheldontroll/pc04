@@ -53,3 +53,4 @@ C:\Programacion1\Pc04\pc04\obj\Debug\net5.0\pc04.dll
 C:\Programacion1\Pc04\pc04\obj\Debug\net5.0\ref\pc04.dll
 C:\Programacion1\Pc04\pc04\obj\Debug\net5.0\pc04.pdb
 C:\Programacion1\Pc04\pc04\obj\Debug\net5.0\pc04.genruntimeconfig.cache
+C:\Programacion1\Pc04\pc04\obj\Debug\net5.0\Razor\Views\Comentario\Comentario.cshtml.g.cs

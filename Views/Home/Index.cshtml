@@ -7,9 +7,14 @@
 }else{
     @foreach (var item in Model)
     {
-        <div class="col-2 text-center">
-            <h2>@item.titulo</h2>
-            <img src="@item.gif" class="img-fluid">
-        </div>
+
+        <form asp-action="Comentario" asp-controller="Comentario">
+            <div class="col-2 text-center">          
+            <button> <h2>@item.titulo</h2></button>
+            <button> <img  src="@item.gif" class="img-fluid"> </button>
+            <input name="idfail" value="@item.id" hidden>
+            </div>
+        </form>
+
     }
 }

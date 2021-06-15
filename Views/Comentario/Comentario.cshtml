@@ -1,0 +1,16 @@
+@model List<Fail>
+
+<h2> 
+    Comenta esta memazo!!
+</h2>
+  
+      
+@foreach (var item in Model)
+{
+    <div class="col-2 text-center">          
+            <h2>    @item.titulo    </h2>
+            <img src="@item.gif" class="img-fluid">
+            </div>
+}          
+     
+
