@@ -21,9 +21,27 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                        @if (!User.Identity.IsAuthenticated){
+                            <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Cuenta" asp-action="IniciarSesion">Inicia Sesion</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Cuenta" asp-action="CrearCuenta">Crear Cuenta</a>
+                            </li>
+                        
+                        }else{
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Fail" asp-action="Fail">Fail</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Fail" asp-action="Fail">Agrega Tu Memaso</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Cuenta" asp-action="CerrarSesion">Cerrar Sesion</a>
+                        </li>
+                        }
+
+
+
+
+
                     </ul>
                 </div>
             </div>
