@@ -20,8 +20,30 @@ namespace pc04.Controllers
 
         public IActionResult Index()
         {
-            var memasos = _context.fails.ToList();
-            return View(memasos);
+            var memasos = _context.fails.Count();
+            List<Fail> mostrar = new List<Fail>();
+            if (memasos > 9)
+            {
+                var cont = memasos - 10 ;
+                
+                for (int i = cont; i <= memasos; i++)
+                {
+                var x = _context.fails.Find(i);
+                mostrar.Add(x);
+                
+                }
+            
+            }else{
+                
+                for (int i = 1; i <= memasos; i++)
+                {
+                var x = _context.fails.Find(i);
+                mostrar.Add(x);
+               
+                }
+            }
+            return View(mostrar);
+            
         }
 
        
