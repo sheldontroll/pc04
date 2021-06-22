@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using pc04.Models;
@@ -12,10 +13,14 @@ namespace pc04.Controllers
     public class HomeController : Controller
     {
         private readonly PeruContext _context;
+        private readonly SignInManager<IdentityUser> _sim;
+        private readonly UserManager<IdentityUser> _um;
 
-        public HomeController(PeruContext context)
+        public HomeController(PeruContext context , SignInManager<IdentityUser>  sim , UserManager<IdentityUser>  um)
         {
             _context = context;
+            _sim = sim;
+            _um = um;
         }
 
         public IActionResult Index()

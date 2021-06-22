@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using pc04.Models;
@@ -9,9 +10,10 @@ using pc04.Models;
 namespace pc04.Migrations
 {
     [DbContext(typeof(PeruContext))]
-    partial class PeruContextModelSnapshot : ModelSnapshot
+    [Migration("20210622192404_user")]
+    partial class user
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -245,9 +247,6 @@ namespace pc04.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("titulo")
-                        .HasColumnType("text");
-
-                    b.Property<string>("usuario")
                         .HasColumnType("text");
 
                     b.HasKey("id");

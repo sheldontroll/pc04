@@ -9,8 +9,9 @@
     {
 
         <form asp-action="Comentario" asp-controller="Comentario">
-            <div class="col-2 text-center">          
+            <div class="col-4 text-center">          
             <button> <h2>@item.titulo</h2></button>
+            <button> <h2>Subido por @item.usuario</h2>   </button>
             <button> <img  src="@item.gif" class="img-fluid"> </button>
             <input name="idfail" value="@item.id" hidden>
             </div>

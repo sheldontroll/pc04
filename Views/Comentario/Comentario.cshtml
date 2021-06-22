@@ -7,8 +7,9 @@
       
 @foreach (var item in Model)
 {
-    <div class="col-2 text-center">          
+    <div class="col-4 text-center">          
             <h2>    @item.titulo    </h2>
+            <h2>    Subido por @item.usuario</h2>
             <img src="@item.gif" class="img-fluid">
             </div>
 }          
