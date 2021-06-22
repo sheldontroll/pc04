@@ -22,25 +22,21 @@ namespace pc04.Controllers
         {
             var memasos = _context.fails.Count();
             List<Fail> mostrar = new List<Fail>();
-            if (memasos > 9)
+            int contar = 0;
+            var orden = _context.fails.OrderByDescending(d => d.fecha).ToList();
+            if (memasos <= 10)
             {
-                var cont = memasos - 10 ;
-                
-                for (int i = cont; i <= memasos; i++)
-                {
-                var x = _context.fails.Find(i);
-                mostrar.Add(x);
-                
-                }
-            
-            }else{
-                
-                for (int i = 1; i <= memasos; i++)
-                {
-                var x = _context.fails.Find(i);
-                mostrar.Add(x);
-               
-                }
+                mostrar = orden;
+            }else
+            {
+               foreach (var item in orden)
+               {
+                   if (contar < 10)
+                   {
+                       mostrar.Add(item);
+                       contar++;
+                   }                  
+               }
             }
             return View(mostrar);
             
